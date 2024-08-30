@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test:e2e": "qavajs run --project tsconfig.json node_modules/@qavajs/cli/bin/qavajs.js run --config test-e2e/config.ts"
+    "test:e2e": "qavajs run --config test-e2e/config.ts"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
     "@qavajs/memory": "^1.8.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5",
-    "@qavajs/steps-memory": "^0.17.0"
+    "@qavajs/steps-memory": "^0.17.0",
+    "@qavajs/validation": "^0.10.0"
   }
 }

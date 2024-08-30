@@ -18,7 +18,7 @@ When('I get {string} attribute of company with {string} id via BigCommerce API a
   const attributeName = await this.getValue(attributeAlias);
   const companyId = await this.getValue(companyIdAlias);
   const company = await this.config.bigCommerce.b2bEditionApi.getCompanyDetails(companyId);
-  const value = company.extraFields.find(a => a.fieldName === attributeName)?.fieldValue;
+  const value = company.extraFields.find((a: any) => a.fieldName === attributeName)?.fieldValue;
   this.setValue(key, value);
 });
 
