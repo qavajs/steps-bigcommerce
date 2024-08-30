@@ -10,16 +10,49 @@ on:
       - main
 
 jobs:
-  test:
-    strategy:
-      matrix:
-        version: [ 18, 20, 22 ]
+  node18:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.version }}
+          node-version: 18
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test:e2e
+      - name: junit report
+        uses: mikepenz/action-junit-report@v4
+        if: always()
+        with:
+          report_paths: './test-e2e/report.xml'
+          fail_on_failure: true
+  node20:
+    if: ${{ always() }}
+    needs: node18
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test:e2e
+      - name: junit report
+        uses: mikepenz/action-junit-report@v4
+        if: always()
+        with:
+          report_paths: './test-e2e/report.xml'
+          fail_on_failure: true
+  node22:
+    if: ${{ always() }}
+    needs: [ node18,node20 ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
       - run: npm ci
       - run: npm run build
       - run: npm run test:e2e
