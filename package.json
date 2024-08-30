@@ -1,0 +1,33 @@
+{
+  "name": "@qavajs/steps-bigcommerce",
+  "version": "0.1.0",
+  "description": "Collection of BigCommerce steps for qavajs framework",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test:e2e": "qavajs run --project tsconfig.json node_modules/@qavajs/cli/bin/qavajs.js run --config test-e2e/config.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qavajs/steps-bigcommerce.git"
+  },
+  "authors": [
+    "Alexandr Galichenko",
+    "Alexandr Legchilov"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qavajs/steps-bigcommerce/issues"
+  },
+  "homepage": "https://github.com/qavajs/steps-bigcommerce#readme",
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.8.0",
+    "@qavajs/cli": "^0.40.0",
+    "@qavajs/console-formatter": "^0.7.2",
+    "@qavajs/html-formatter": "^0.18.1",
+    "@qavajs/memory": "^1.8.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
+    "@qavajs/steps-memory": "^0.17.0"
+  }
+}
