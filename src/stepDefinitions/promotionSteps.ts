@@ -17,7 +17,7 @@ When('I get all promotions via BigCommerce API and save as {string}', async func
 When('I deactivate all promotions via BigCommerce API', async function () {
   const promotions = await this.config.bigCommerce.promotionsApi.getPromotions();
   const ids = promotions.filter((p: Promotion) => p.status === 'ENABLED').map((p: Required<Promotion>) => p.id);
-  if (ids.length) await Promise.allSettled(ids.map((id) => this.config.bigCommerce.promotionsApi.updatePromotion(id, {status: 'DISABLED'})));
+  if (ids.length) await Promise.allSettled(ids.map((id: number) => this.config.bigCommerce.promotionsApi.updatePromotion(id, {status: 'DISABLED'})));
 });
 
 /**
