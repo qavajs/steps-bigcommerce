@@ -28,6 +28,7 @@
     "@qavajs/memory": "^1.8.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5",
-    "@qavajs/steps-memory": "^0.17.0"
+    "@qavajs/steps-memory": "^0.17.0",
+    "@qavajs/validation": "^0.10.0"
   }
 }
