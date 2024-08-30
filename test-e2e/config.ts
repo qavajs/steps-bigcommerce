@@ -14,9 +14,9 @@ export default {
     '@qavajs/html-formatter:test-e2e/report.html'
   ],
   bigCommerce: {
-    storeHash: '0bvmqr36yg',
-    accessToken: 'pke41vatg1c5gacbog3z8n39u4cxi1y',
-    b2bAccessToken: ''
+    storeHash: process.env.STORE_HASH,
+    accessToken: process.env.BC_ACCESS_TOKEN,
+    b2bAccessToken: 'b2bAccessToken not set'
   },
   memory,
   parallel: 4,
