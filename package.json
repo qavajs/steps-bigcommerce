@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test:e2e": "qavajs run --project tsconfig.json node_modules/@qavajs/cli/bin/qavajs.js run --config test-e2e/config.ts"
+    "test:e2e": "qavajs run --config test-e2e/config.ts"
   },
   "repository": {
     "type": "git",
