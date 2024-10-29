@@ -1,4 +1,4 @@
-import {IQavajsConfig} from "@qavajs/cli";
+import {IQavajsConfig} from "@qavajs/core";
 import CustomersApi from "./src/api/CustomersApi";
 import B2bEditionApi from "./src/api/B2bEditionApi";
 import PromotionsApi from "./src/api/PromotionsApi";

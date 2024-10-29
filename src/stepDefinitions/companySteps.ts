@@ -1,11 +1,12 @@
 import {When} from '@cucumber/cucumber';
 import {CreateCompanyResponse} from '../models';
+import {type MemoryValue} from '@qavajs/core';
 
-When('I create company via BigCommerce API and save response as {string}:', async function (key: string, multilineString: string) {
+When('I create company via BigCommerce API and save response as {value}:', async function (key: MemoryValue, multilineString: string) {
   const transformedString = await this.getValue(multilineString);
   const inputObject = JSON.parse(transformedString);
   const company: CreateCompanyResponse = await this.config.bigCommerce.b2bEditionApi.createCompany(inputObject);
-  await this.setValue(key, company);
+  key.set(company);
 });
 
 When('I create company address via BigCommerce API:', async function (multilineString: string) {
@@ -14,12 +15,12 @@ When('I create company address via BigCommerce API:', async function (multilineS
   await this.config.bigCommerce.b2bEditionApi.createAddress(inputObject);
 });
 
-When('I get {string} attribute of company with {string} id via BigCommerce API and save as {string}', async function (attributeAlias: string, companyIdAlias: string, key: string) {
-  const attributeName = await this.getValue(attributeAlias);
-  const companyId = await this.getValue(companyIdAlias);
+When('I get {value} attribute of company with {value} id via BigCommerce API and save as {value}', async function (attributeAlias: MemoryValue, companyIdAlias: MemoryValue, key: MemoryValue) {
+  const attributeName = await attributeAlias.value();
+  const companyId = await companyIdAlias.value();
   const company = await this.config.bigCommerce.b2bEditionApi.getCompanyDetails(companyId);
   const value = company.extraFields.find((a: any) => a.fieldName === attributeName)?.fieldValue;
-  this.setValue(key, value);
+  key.set(value);
 });
 
 /**
@@ -29,10 +30,10 @@ When('I get {string} attribute of company with {string} id via BigCommerce API a
  * @param companyIdAlias {string} - identifier of the company
  * @example When I set 'taxExemptRequestStatus' attribute value to 'approved' for company with '$currentCompanyId' id via BigCommerce API
  */
-When('I set {string} attribute value to {string} for company with {string} id via BigCommerce API', async function (attributeAlias: string, valueAlias: string, companyIdAlias: string) {
-  const attributeId = await this.getValue(attributeAlias);
-  const attributeValue = await this.getValue(valueAlias);
-  const companyId = await this.getValue(companyIdAlias);
+When('I set {value} attribute value to {value} for company with {value} id via BigCommerce API', async function (attributeAlias: MemoryValue, valueAlias: MemoryValue, companyIdAlias: MemoryValue) {
+  const attributeId = await attributeAlias.value();
+  const attributeValue = await valueAlias.value();
+  const companyId = await companyIdAlias.value();
   const attributePayload = {
     extraFields: [
       {
