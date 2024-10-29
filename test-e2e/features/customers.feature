@@ -1,5 +1,6 @@
 Feature: Customers
 
+  @debug
   Scenario: create customer
     When I create customer with '$customerProps' properties via BigCommerce API and save as 'currentCustomer'
     Then I expect '$currentCustomer.id' to have type 'number'
