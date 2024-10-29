@@ -6,6 +6,9 @@ All notable changes to the "@qavajs/steps-bigcommerce" will be documented in thi
 :x: - deprecation
 :pencil: - chore
 
+## [2.0.0]
+- :rocket: added initial implementation v2
+
 ## [0.1.1]
 - :beetle: add .npmignore
 
