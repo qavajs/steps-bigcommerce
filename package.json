@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test:e2e": "qavajs run --config test-e2e/config.ts"
+    "test:e2e": "qavajs run --config test-e2e/config.ts",
+    "test:debug:e2e": "qavajs run --config test-e2e/config.ts --tags @debug"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,7 @@
   "homepage": "https://github.com/qavajs/steps-bigcommerce#readme",
   "devDependencies": {
     "@cucumber/cucumber": "^10.8.0",
-    "@qavajs/core": "^2.0.2",
+    "@qavajs/core": "^2.1.0",
     "@qavajs/console-formatter": "^0.7.2",
     "@qavajs/html-formatter": "^0.18.1",
     "@qavajs/steps-memory": "^1.0.0",
