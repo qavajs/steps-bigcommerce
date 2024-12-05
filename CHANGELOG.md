@@ -2,9 +2,15 @@
 All notable changes to the "@qavajs/steps-bigcommerce" will be documented in this file.
 
 :rocket: - new feature
+
 :beetle: - bugfix
+
 :x: - deprecation
+
 :pencil: - chore
+
+## [1.0.0]
+- :rocket: Added Release 1.0.0
 
 ## [0.1.1]
 - :beetle: add .npmignore

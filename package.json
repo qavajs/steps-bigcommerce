@@ -1,6 +1,6 @@
 {
   "name": "@qavajs/steps-bigcommerce",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Collection of BigCommerce steps for qavajs framework",
   "main": "index.js",
   "scripts": {
