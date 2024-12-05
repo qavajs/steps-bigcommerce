@@ -1,11 +1,12 @@
 {
   "name": "@qavajs/steps-bigcommerce",
-  "version": "0.1.1",
+  "version": "2.0.0",
   "description": "Collection of BigCommerce steps for qavajs framework",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test:e2e": "qavajs run --config test-e2e/config.ts"
+    "test:e2e": "qavajs run --config test-e2e/config.ts",
+    "test:debug:e2e": "qavajs run --config test-e2e/config.ts --tags @debug"
   },
   "repository": {
     "type": "git",
@@ -22,13 +23,11 @@
   "homepage": "https://github.com/qavajs/steps-bigcommerce#readme",
   "devDependencies": {
     "@cucumber/cucumber": "^10.8.0",
-    "@qavajs/cli": "^0.40.0",
+    "@qavajs/core": "^2.1.1",
     "@qavajs/console-formatter": "^0.7.2",
     "@qavajs/html-formatter": "^0.18.1",
-    "@qavajs/memory": "^1.8.0",
+    "@qavajs/steps-memory": "^1.0.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.5",
-    "@qavajs/steps-memory": "^0.17.0",
-    "@qavajs/validation": "^0.10.0"
+    "typescript": "^5.6.3"
   }
 }
