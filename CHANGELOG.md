@@ -1,10 +1,14 @@
 # Change Log
 All notable changes to the "@qavajs/steps-bigcommerce" will be documented in this file.
 
-:rocket: - new feature
-:beetle: - bugfix
-:x: - deprecation
-:pencil: - chore
+:rocket: - new feature  
+:beetle: - bugfix  
+:x: - deprecation/removal  
+:pencil: - chore  
+:microscope: - experimental
+
+## [unreleased]
+- :beetle: fixed publishing workflow
 
 ## [2.0.0]
 - :rocket: added initial implementation v2
